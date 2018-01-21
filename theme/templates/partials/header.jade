@@ -1,0 +1,15 @@
+- var getPath = function(p,l){
+-   var _path = p.split('/')
+-   _path[0] = l
+-   return _path.join('/')
+- }
+
+header
+    ul.menu
+      li
+        a(href="/#{locale}") Home
+
+    ul.langswitcher
+      each lang in languages
+        li
+          a(href="/#{getPath(path,lang)}") #{lang}
