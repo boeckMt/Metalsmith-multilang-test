@@ -1,0 +1,9 @@
+doctype html
+html(lang=`${lang}`)
+  include partials/head.pug
+  body
+    include partials/header.pug
+    block content
+      main: article
+          h1= title
+          != content

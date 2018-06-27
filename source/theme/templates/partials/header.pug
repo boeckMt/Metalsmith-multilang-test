@@ -1,0 +1,26 @@
+- var getPath = function(p,l){
+-   var _path = p.split('\\')
+-   _path[0] = l
+-   return _path.join('/')
+- }
+
+- var checkLang = function(index){
+-   if(index == 'English' || index == 'Deutsch'){
+-     return true;
+-   }else{
+-     return false;
+-   }
+- }
+
+header
+    ul.menu
+      each item, index in sitedata[lang].headermenu
+          if !checkLang(index)
+            li
+              a(href=`/${item}`) #{index}
+
+    ul.langswitcher
+      each item, index in sitedata[lang].headermenu
+          if checkLang(index)
+            li
+              a(href=`${getPath(path,item)}`) #{index}
