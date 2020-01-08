@@ -1,0 +1,36 @@
+{
+    "$id": "https://example.com/address.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Markdown Fronttmater",
+    "description": "Markdown header editor help",
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "description":"enter the Title of the file"
+      },
+      "name": {
+        "type": "string",
+        "description":"enter the Name of the file"
+      },
+      "type": {
+        "title": "Street Address",
+        "description": "Street of you address",
+        "type": "array",
+        "items": {
+            "properties": {
+                "test":{
+                    "type": "string"
+                },
+                "test2":{
+                    "type": "string"
+                }
+            },
+            "required": ["test","test2"]
+        },
+        "default":["test","test2"]
+      }
+    },
+    "required": ["title", "type"]
+  }
+  
